@@ -1,0 +1,77 @@
+import React from "react";
+import { graphql } from "gatsby";
+import { About, Contact, Hero, Jobs, Projects, Layout } from "../components";
+
+const Home = ({data}) => {
+  const {jobs, about, projects} = data;
+  return (
+    <Layout>
+      <Hero />
+      <About about={about.nodes} />
+      <Jobs jobs={jobs.nodes} />
+      <Projects projects={projects.nodes} />
+      <Contact/>
+    </Layout>
+  )
+};
+
+export default Home;
+
+export const query = graphql`
+  {
+    about: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/about/"}}) {
+      nodes {
+        frontmatter {
+          title
+          skills
+          avatar {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        html
+      }
+    }
+    jobs: allMarkdownRemark(
+        sort: {fields: frontmatter___date, order: DESC},
+        filter: {fileAbsolutePath: {regex: "/jobs/"}}
+    ) {
+      nodes {
+        frontmatter {
+          title
+          company
+          location
+          range
+          url
+        }
+        internal {
+          content
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      filter: {fileAbsolutePath: {regex: "/featProjects/"}},
+      sort: {fields: frontmatter___rank, order: ASC}
+    ) {
+      nodes {
+        frontmatter {
+          title
+          tech
+          url
+          github
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        html
+      }
+    }
+  }
+`
