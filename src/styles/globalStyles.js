@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
     &.hidden {
       overflow: hidden;
     }
-    &.blur {
+    &.hideOverflow {
       overflow: hidden;
       #root > #content > * {
         filter: blur(5px) brightness(0.7);
@@ -97,7 +97,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: ${colors.green};
+      color: ${colors.orange};
     }
   }
 

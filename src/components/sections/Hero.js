@@ -9,9 +9,9 @@ const { colors } = theme;
 const StyledHero = styled.section`
   width: 100vw;
   background: ${colors.lightBlack};
-  padding: 20rem 0;
+  padding: 20rem 6rem;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-
+  ${media.phablet`padding: 15rem 2.4rem`}
   .inner-section {
     max-width: 96rem;
     margin: auto;
@@ -33,6 +33,8 @@ const StyledHero = styled.section`
   .name-intro {
     margin-top: 2.4rem;
     font-size: 6.8rem;
+    ${media.tablet`font-size: 5.6rem`}
+    ${media.phablet`font-size: 4.4rem`}
     .firstname {
       color: ${colors.orange};
     }
@@ -40,6 +42,8 @@ const StyledHero = styled.section`
   .basic-intro {
     font-size: 4rem;
     margin-top: 1rem;
+    ${media.tablet`font-size: 3.2rem`}
+    ${media.phablet`font-size: 2.4rem`}
   }
   .desc-intro {
     letter-spacing: .1rem;
@@ -47,9 +51,13 @@ const StyledHero = styled.section`
     margin-top: 5rem;
     font-size: 1.6rem;
     line-height: 1.5;
+    ${media.phablet`font-size: 1.4rem;`}
+    ~a {
+      margin-top: 4rem;
+      ${media.phablet`margin-top: 2.8rem;`}
+    }
   }
   .contact-btn {
-    margin-top: 4rem;
     padding: 1.4rem 2rem;
     text-transform: uppercase;
     letter-spacing: .3rem;
@@ -58,12 +66,13 @@ const StyledHero = styled.section`
     background: ${colors.lightBlack};
     font-weight: 700;
     transition: background .3s;
+    ${media.phone`padding: 1.4rem 0.8rem;`}
     &:hover {
       background: ${hex2rgba(colors.orange, 0.2)};
     }
-    &.resume {
-      margin-left: 2rem;
-    }
+  }
+  .resume-link {
+    margin-left: 2rem;
   }
 `;
 
@@ -88,6 +97,7 @@ const Hero = () => {
         </Link>
         <a href="/resume.pdf"
           target="_blank"
+          className="resume-link"
           rel="nofollow noopener noreferrer">
           <button className="contact-btn resume">
             resume

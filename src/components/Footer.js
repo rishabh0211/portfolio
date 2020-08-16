@@ -8,11 +8,12 @@ const { colors } = theme;
 const StyledFooter = styled.footer`
   background: ${colors.lightBlack};
   ${mixins.flexCenter};
-  padding: 4rem 0;
+  padding: 4rem 2rem;
   letter-spacing: .1rem;
   color: ${colors.lightGray};
   h3 {
     font-size: 1.4rem;
+    font-weight: 500;
     span {
       color: ${colors.orange};
     }

@@ -9,8 +9,10 @@ const { colors } = theme;
 const StyledJobs = styled.section`
   width: 100vw;
   background: ${colors.lightBlack};
-  padding: 20rem 0;
+  padding: 20rem 6rem;
   letter-spacing: .1rem;
+  ${media.thone`padding: 20rem 4rem;`}
+  ${media.phablet`padding: 10rem 2rem;`}
 
   .inner-section {
     max-width: 72rem;
@@ -25,6 +27,11 @@ const StyledJobs = styled.section`
     font-size: 2rem;
     letter-spacing: .5rem;
     color: ${colors.orange};
+    ${media.thone`
+      .line-after {
+        display: none;
+      }
+    `}
   }
   .hr-line {
     width: 3rem;
@@ -35,19 +42,34 @@ const StyledJobs = styled.section`
   .experience-container {
     margin-top: 5.6rem;
     display: flex;
+    ${media.thone`flex-direction: column;`}
   }
   .tabs-list {
     position: relative;
     width: max-content;
     border-left: solid .1rem ${colors.lightGray};
     align-self: baseline;
+    ${media.thone`
+      display: flex;
+      align-self: center;
+      border-left: none;
+      border-bottom: solid .1rem #d2d2d2;
+      overflow-x: scroll;
+      justify-content: center;
+    `}
+    ${media.phablet`width: calc(100% + 4rem);`}
   }
   .description-container {
     margin-left: 2rem;
+    ${media.thone`margin: 4rem 0 0 0;`}
+  }
+  .descriptions {
+    margin-right: 2rem;
   }
   .job-title {
     font-size: 2rem;
     font-weight: 500;
+    ${media.thone`font-size: 1.8rem;`}
     .company {
       color: ${colors.orange};
 
@@ -103,6 +125,12 @@ const StyledTabItem = styled.li`
   cursor: pointer;
   position: relative;
   color: ${props => props.isActive ? colors.orange : colors.lightGray};
+  ${media.thone`min-width: 13rem`}
+  ${media.phablet`
+    &:first-child {
+      margin-left: 3rem;
+    }
+  `}
   &::after {
     content: "";
     position: absolute;
@@ -130,6 +158,7 @@ const StyledSelection = styled.div`
   transition: top 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
   z-index: 10;
+  ${media.thone`display: none;`}
 `;
 
 const Jobs = ({ jobs }) => {
@@ -142,7 +171,7 @@ const Jobs = ({ jobs }) => {
         <h3 className="hello-heading">
           <div className="hr-line"></div>
           Professional Experience
-          <div className="hr-line"></div>
+          <div className="hr-line line-after"></div>
         </h3>
         <div className="experience-container">
           <ul className="tabs-list">
@@ -171,6 +200,7 @@ const Jobs = ({ jobs }) => {
                 <div
                   key={company}
                   hidden={activeTab !== i}
+                  className="descriptions"
                 >
                   <h3 className="job-title">{title}
                     <span className="company">

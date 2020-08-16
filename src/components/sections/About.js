@@ -10,8 +10,9 @@ const { colors } = theme;
 const StyledAbout = styled.section`
   width: 100vw;
   background: ${colors.darkBlack};
-  padding: 24rem 0;
+  padding: 24rem 6rem;
   margin-top: -10rem;
+  ${media.phablet`padding: 18rem 2rem 10rem 2rem;`}
 
   .inner-container {
     max-width: 96rem;
@@ -20,20 +21,29 @@ const StyledAbout = styled.section`
   .about-section {
     display: flex;
     ${mixins.flexBetween};
+    ${media.thone`
+      flex-direction: column-reverse;
+    `}
   }
   .image-container {
     width: 40%;
+    ${media.thone`
+      width: 60%;
+      align-self: center;
+    `}
     .image {
       object-fit: contain;
     }
   }
   .about-desc {
     width: 56%;
+    ${media.thone`width: 100%;`}
     p {
       margin-top: 2rem;
       margin-top: 2.4rem;
       font-size: 1.6rem;
       letter-spacing: .1rem;
+      ${media.thone`font-size: 1.4rem`}
     }
   }
   .skill-section {
@@ -59,6 +69,10 @@ const StyledAbout = styled.section`
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     grid-column-gap: 1.4rem;
     grid-row-gap: 2rem;
+    ${media.thone`
+      margin-left: 6rem;
+      grid-template-columns: repeat(auto-fit,minmax(14rem,1fr));
+    `}
     .skill-item {
       display: flex;
       align-items: center;
@@ -68,7 +82,7 @@ const StyledAbout = styled.section`
       }
     }
     .skill-name {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       letter-spacing: .1rem;
     }
   }
@@ -78,6 +92,8 @@ const StyledAbout = styled.section`
     top: 50%;
     left: -2rem;
     transform: translateY(-50%) rotate(-90deg);
+    ${media.thone`left: -8rem;`}
+    ${media.phablet`left: -7rem;`}
   }
   .hr-line {
     width: 3rem;

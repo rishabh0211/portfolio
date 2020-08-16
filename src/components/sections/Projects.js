@@ -10,9 +10,9 @@ const { colors, fontSizes, fonts } = theme;
 const StyledProjects = styled.section`
   width: 100vw;
   background: ${colors.darkBlack};
-  padding: 16rem 0;
+  padding: 16rem 6rem;
   letter-spacing: .1rem;
-
+  ${media.phablet`padding: 10rem 2rem;`}
   .inner-section {
     max-width: 96rem;
     margin: auto;
@@ -26,6 +26,10 @@ const StyledProjects = styled.section`
     font-size: 2rem;
     letter-spacing: .5rem;
     color: ${colors.orange};
+
+    .line-after {
+      ${media.phablet`display: none;`}
+    }
   }
   .hr-line {
     width: 3rem;
@@ -42,10 +46,19 @@ const StyledProjects = styled.section`
     &:nth-child(2n) {
       .project-image {
         grid-column: 1/8;
+        ${media.thone`
+          opacity: 0.2;
+          grid-column: 1 / -1;
+        `}
       }
       .project-description {
         grid-column: 7/-1;
         text-align: right;
+        ${media.thone`
+          grid-column: 1/-1;
+          padding: 4rem 4rem 3rem;
+          text-align: left;
+        `}
         .header {
           justify-content: flex-end;
         }
@@ -58,6 +71,17 @@ const StyledProjects = styled.section`
   .project-image {
     grid-column: 6/-1;
     grid-row: 1 / -1;
+    ${media.thone`
+      opacity: 0.2;
+      grid-column: 1 / -1;
+      height: 100%;
+    `}
+
+    .image {
+      height: 33rem;
+      width: 100%;
+      border-radius: .3rem;
+    }
     &:hover{
       ::before {
         background: transparent;
@@ -82,6 +106,11 @@ const StyledProjects = styled.section`
     grid-column: 1/7;
     grid-row: 1 / -1;
     z-index: 4;
+    ${media.thone`
+      grid-column: 1/-1;
+      padding: 4rem 4rem 3rem;
+    `}
+
     .header {
       display: flex;
       align-items: center;
@@ -131,7 +160,7 @@ const Projects = ({ projects }) => {
         <h3 className="hello-heading">
           <div className="hr-line"></div>
           some of my work
-          <div className="hr-line"></div>
+          <div className="hr-line line-after"></div>
         </h3>
         <div>
           {projects && projects.map((project, i) => {
@@ -154,7 +183,7 @@ const Projects = ({ projects }) => {
                   </ul>
                 </div>
                 <a className="project-image" target="_blank" href={url} >
-                  <Image fluid={image.childImageSharp.fluid} alt={title} />
+                  <Image className="image" fluid={image.childImageSharp.fluid} alt={title} />
                 </a>
               </div>
             )

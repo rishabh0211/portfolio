@@ -6,8 +6,9 @@ const { colors, fonts } = theme;
 export default styled.section`
   width: 100vw;
   background: ${colors.lightBlack};
-  padding: 16rem 0;
+  padding: 16rem 4rem;
   letter-spacing: .1rem;
+  ${media.phablet`padding: 10rem 2rem;`}
 
   .inner-section {
     max-width: 85rem;
@@ -31,6 +32,9 @@ export default styled.section`
   .info-container {
     margin-top: 4rem;
     display: flex;
+    ${media.thone`
+      flex-direction: column;
+    `}
   }
   .personal-info {
     .info {
@@ -39,6 +43,9 @@ export default styled.section`
       display: flex;
       &:not(:first-child) {
         margin-top: 2rem;
+      }
+      h3 {
+        font-weight: 500;
       }
       .icon {
         height: 2rem;
@@ -55,6 +62,14 @@ export default styled.section`
     margin-top: -13rem;
     font-size: 1.4rem;
     flex-grow: 1;
+    ${media.desktop`
+      padding: 6rem 4rem;
+      margin-left: 5rem;
+    `}
+    ${media.thone`
+      margin-left: 0;
+      margin-top: 2rem;
+    `}
     .form-group {
       &:not(:first-child) {
         margin-top: 3rem;
