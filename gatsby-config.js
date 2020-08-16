@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "Rishabh Rastogi | Portfolio",
-    description: "This is WebDev Portfolio Site",
+    description: "Portfolio website of Rishabh Rastogi. Specialized in web development.",
     siteUrl: "https://rishabhrastogi.netlify.app",
     siteLanguage: 'en_US',
   },
@@ -35,7 +35,7 @@ module.exports = {
         background_color: '#1b2229',
         theme_color: '#161c21',
         display: 'minimal-ui',
-        icon: 'src/images/favicons/favicon.ico',
+        icon: 'src/images/logo.png',
       },
     },
     `gatsby-plugin-offline`,

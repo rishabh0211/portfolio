@@ -3,11 +3,13 @@ import Links from './Links';
 import Image from "gatsby-image";
 import Helmet from "react-helmet";
 import { StyledNavbar, StyledBurgerContainer } from "./styledComponents/StyledNavbar";
+import { throttle } from '../utils';
 
 const Navbar = ({logo}) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [noAnim, setNoAnim] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const menu = React.createRef();
 
   const onNavClick = () => {
@@ -17,14 +19,25 @@ const Navbar = ({logo}) => {
   useEffect(() => {
     return () => {
       window.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   useEffect(() => {
+    window.addEventListener("scroll", throttle(handleScroll, 200));
     if (menuOpen) {
       window.addEventListener("click", handleClickOutside);
     }
   }, [menuOpen]);
+
+  const handleScroll = () => {
+    const THRESHOLD = 150;
+    if (window.pageYOffset > THRESHOLD) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
 
   const handleClickOutside = useCallback(e => {
     if (menu && menu.current && !menu.current.contains(e.target)) {
@@ -46,7 +59,7 @@ const Navbar = ({logo}) => {
   };
 
   return (
-    <StyledNavbar>
+    <StyledNavbar scrolled={scrolled}>
       <Helmet>
         <body className={menuOpen ? 'hideOverflow' : ''} />
       </Helmet>

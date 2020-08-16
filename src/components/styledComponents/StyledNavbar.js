@@ -78,12 +78,13 @@ export const StyledNavbar = styled.nav`
   width: 100vw;
   background: ${colors.lightBlack};
   ${mixins.flexCenter};
-  padding: 3rem 0;
+  padding: ${props => props.scrolled ? '2.5rem 0' : '3rem 0'};
   font-family: ${fonts.Poppins};
   position: fixed;
   top: 0;
   z-index: 11;
-  box-shadow: 0 1rem 3rem rgba(0,0,0,0.5);
+  box-shadow: ${props => props.scrolled && '0 1rem 3rem rgba(0,0,0,0.5)'};
+  transition: all .3s;
   ${media.tablet`
     ${mixins.flexBetween}
     padding: 2rem 0;

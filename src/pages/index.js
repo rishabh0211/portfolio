@@ -75,8 +75,8 @@ export const query = graphql`
     }
     logo: allImageSharp(filter: {fluid: {src: {regex: "/logo/"}}}) {
       nodes {
-        fluid(traceSVG: { color: "#f3bd5c" }) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
