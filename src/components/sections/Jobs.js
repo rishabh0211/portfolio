@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import { media, mixins, theme } from "../../styles";
+import { media, theme } from "../../styles";
 import { hex2rgba } from "../../utils";
 import { TiArrowForwardOutline } from "react-icons/ti";
 
@@ -194,7 +194,7 @@ const Jobs = ({ jobs }) => {
           <div className="description-container">
             {jobs && jobs.map((job, i) => {
               const { frontmatter, internal: { content } } = job;
-              const { company, location, range, title, url } = frontmatter;
+              const { company, range, title, url } = frontmatter;
               const description = content.split('\n').filter(a => !!a).map(desc => desc.substring(2));
               return (
                 <div

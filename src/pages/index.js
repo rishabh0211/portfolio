@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 import { About, Contact, Hero, Jobs, Projects, Layout } from "../components";
 
 const Home = ({data}) => {
-  const {jobs, about, projects} = data;
+  const {jobs, about, projects, logo} = data;
   return (
-    <Layout>
+    <Layout logo={logo.nodes}>
       <Hero />
       <About about={about.nodes} />
       <Jobs jobs={jobs.nodes} />
@@ -71,6 +71,13 @@ export const query = graphql`
           }
         }
         html
+      }
+    }
+    logo: allImageSharp(filter: {fluid: {src: {regex: "/logo/"}}}) {
+      nodes {
+        fluid(traceSVG: { color: "#f3bd5c" }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
       }
     }
   }

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { media, mixins, theme } from "../styles";
-const { colors, fonts } = theme;
+import { media } from "../styles";
 
 const StyledLinks = styled.ul`
   list-style: none;
@@ -13,9 +12,12 @@ const StyledLinks = styled.ul`
     font-size: 1.2rem;
     cursor: pointer;
     ${media.tablet`
-      padding: 2rem;
       &:first-child {
-        margin-top: 3rem;
+        margin-top: 5rem;
+      }
+      a {
+        padding: 2rem;
+        width: 100%;
       }
     `}
 
@@ -29,20 +31,20 @@ const StyledLinks = styled.ul`
 const Links = React.forwardRef(({ styleClass, handleClick }, ref) => {
   return (
     <StyledLinks ref={ref} className={`nav-list ${styleClass}`}>
-      <li className="nav-item" onClick={handleClick}>
-        <Link to="#hero">home</Link>
+      <li className="nav-item">
+        <Link to="#hero" onClick={handleClick}>home</Link>
       </li>
-      <li className="nav-item" onClick={handleClick}>
-        <Link to="#about">about</Link>
+      <li className="nav-item">
+        <Link to="#about" onClick={handleClick}>about</Link>
       </li>
-      <li className="nav-item" onClick={handleClick}>
-        <Link to="#jobs">experience</Link>
+      <li className="nav-item">
+        <Link to="#jobs" onClick={handleClick}>experience</Link>
       </li>
-      <li className="nav-item" onClick={handleClick}>
-        <Link to="#projects">projects</Link>
+      <li className="nav-item">
+        <Link to="#projects" onClick={handleClick}>projects</Link>
       </li>
-      <li className="nav-item" onClick={handleClick}>
-        <Link to="#contact">contact</Link>
+      <li className="nav-item">
+        <Link to="#contact" onClick={handleClick}>contact</Link>
       </li>
     </StyledLinks>
   )

@@ -3,17 +3,20 @@ import { useStaticQuery, graphql } from "gatsby";
 import GlobalStyle from '../styles/globalStyles';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import Head from './Head';
 
 if (typeof window !== 'undefined') {
   // eslint-disable-next-line global-require
   require('smooth-scroll')('a[href*="#"]');
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, logo }) => {
+  const { site } = useStaticQuery(query);
   return (
     <div>
+      <Head metadata={site.siteMetadata} />
       <GlobalStyle />
-      <Navbar />
+      <Navbar logo={logo[0]} />
       {children}
       <Footer />
     </div>
@@ -23,16 +26,14 @@ const Layout = ({ children }) => {
 export default Layout;
 
 const query = graphql`
-    {
-      site {
-        siteMetadata {
-          author
-          description
-          image
-          siteUrl
-          title
-          twitterUsername
-        }
+  {
+    site {
+      siteMetadata {
+        description
+        siteUrl
+        title
+        siteLanguage
       }
     }
-  `;
+  }
+`;

@@ -7,12 +7,10 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "WebDev Portfolio",
+    title: "Rishabh Rastogi | Portfolio",
     description: "This is WebDev Portfolio Site",
-    author: "@rishabh0211",
-    twitterUsername: "@rishabh0211",
-    image: "/twitter-img.png",
-    siteUrl: "https://testing-strapi-gatsby-build.netlify.app",
+    siteUrl: "https://rishabhrastogi.netlify.app",
+    siteLanguage: 'en_US',
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -37,7 +35,7 @@ module.exports = {
         background_color: '#1b2229',
         theme_color: '#161c21',
         display: 'minimal-ui',
-        icon: 'static/favicon.ico',
+        icon: 'src/images/favicons/favicon.ico',
       },
     },
     `gatsby-plugin-offline`,

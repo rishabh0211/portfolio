@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { media, mixins, theme } from "../../styles";
+import { media, theme } from "../../styles";
 import { hex2rgba } from "../../utils";
 import { Link } from 'gatsby';
 

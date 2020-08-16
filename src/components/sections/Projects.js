@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import Image from "gatsby-image";
-import { media, mixins, theme } from "../../styles";
+import { media, theme } from "../../styles";
 import { hex2rgba } from "../../utils";
 import { GoMarkGithub, GoLinkExternal } from "react-icons/go";
 
-const { colors, fontSizes, fonts } = theme;
+const { colors } = theme;
 
 const StyledProjects = styled.section`
   width: 100vw;
@@ -170,10 +170,10 @@ const Projects = ({ projects }) => {
                 <div className="project-description">
                   <div className="header">
                     <h2 className="project-title">{title}</h2>
-                    <a target="_blank" href={github} >
+                    <a target="_blank" rel="nofollow noopener noreferrer" href={github} >
                       <GoMarkGithub className="icon github-icon" />
                     </a>
-                    <a target="_blank" href={url} >
+                    <a target="_blank" rel="nofollow noopener noreferrer" href={url} >
                       <GoLinkExternal className="icon external-icon" />
                     </a>
                   </div>
@@ -182,7 +182,7 @@ const Projects = ({ projects }) => {
                     {tech.map(lang => <li key={lang}>{lang}</li>)}
                   </ul>
                 </div>
-                <a className="project-image" target="_blank" href={url} >
+                <a className="project-image" target="_blank" rel="nofollow noopener noreferrer" href={url} >
                   <Image className="image" fluid={image.childImageSharp.fluid} alt={title} />
                 </a>
               </div>

@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { media, mixins, theme } from "../../styles";
-import { hex2rgba } from "../../utils";
+import { media, theme } from "../../styles";
 const { colors, fonts } = theme;
 
 export default styled.section`

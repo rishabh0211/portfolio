@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import Image  from "gatsby-image";
 import { media, mixins, theme } from "../../styles";
-import { hex2rgba } from "../../utils";
 import { FaCodepen } from "react-icons/fa";
 
 const { colors } = theme;

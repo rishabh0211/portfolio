@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Links from './Links';
-import { throttle } from "../utils";
+import Image from "gatsby-image";
 import Helmet from "react-helmet";
 import { StyledNavbar, StyledBurgerContainer } from "./styledComponents/StyledNavbar";
 
-const Navbar = () => {
+const Navbar = ({logo}) => {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [noAnim, setNoAnim] = useState(true);
@@ -50,7 +50,9 @@ const Navbar = () => {
       <Helmet>
         <body className={menuOpen ? 'hideOverflow' : ''} />
       </Helmet>
-      <div className="logo"></div>
+      <div className="logo">
+        <Image fluid={logo.fluid} alt="logo" />
+      </div>
       <Links styleClass="desktop-links" />
       <StyledBurgerContainer
         className={`burger-container ${menuOpen ? 'active' : ''} ${noAnim ? 'no-anim' : ''}`}

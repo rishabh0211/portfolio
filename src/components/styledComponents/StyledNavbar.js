@@ -89,6 +89,22 @@ export const StyledNavbar = styled.nav`
     padding: 2rem 0;
   `}
 
+  .logo {
+    height: 5rem;
+    width: 5rem;
+    top: 50%;
+    left: 4rem;
+    transform: translateY(-50%);
+    position: absolute;
+    ${media.tablet`
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translateY(0);
+      margin-left: 4rem;
+    `}
+  }
+
   .desktop-links {
     display: flex;
     ${media.tablet`display: none`}
