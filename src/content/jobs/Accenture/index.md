@@ -7,8 +7,7 @@ url: 'https://www.accenture.com/in-en'
 date: 2017-01-24
 ---
 
-- Modify existing web application to correct errors or to upgrade interfaces and improve performance.
-- Evaluate code to ensure that it is valid, is properly structured, meets industry standards and is compatible with browsers, devices, or operating systems.a
-- Debugging the code efficiently to find the root cause of the defects and resolving them.
-- Develop or validate test routines and schedules to ensure that test cases mimic external interfaces and address all browser and device types.
-- Write test cases for the existing and new code to meet the industry standards.
+- Worked in the UI team as the frontend developer for T-Mobile. Developed the plan selection section in the prepaid user flow.
+- Co-ordinated within and across the teams to ensure the smooth development process.
+- Wrote and helped the colleagues to write the test cases for the existing code improving the overall code coverage.
+- Modified existing web application to correct errors or to upgrade interfaces and improve performance.

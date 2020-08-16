@@ -16,10 +16,8 @@ skills:
   - Docker
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse harum in a error architecto
-laudantium sed atque, numquam doloremque sapiente suscipit sint neque? Ipsum quae nihil
-veritatis reprehenderit nostrum dicta.
+Hi! I'm Rishabh, a sofware engineer based in New Delhi, India.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse harum in a error architecto
-laudantium sed atque, numquam doloremque sapiente suscipit sint neque? Ipsum quae nihil
-veritatis reprehenderit nostrum dicta.
+I'm a web development enthusiast. I enjoy creating interactive and engaging things for the web. I'm always looking for ways to improve and optimise the applications.
+
+I've been engaged in web developer for over 4 years. My specialization is Frontend development but I'm always looking to learn and expand my horizon. Below are the few technologies I've worked on recently: 
