@@ -6,7 +6,7 @@ import { StyledNavbar, StyledBurgerContainer } from "./styledComponents/StyledNa
 import { throttle } from '../utils';
 
 const Navbar = ({logo}) => {
-
+  const THRESHOLD = 150;
   const [menuOpen, setMenuOpen] = useState(false);
   const [noAnim, setNoAnim] = useState(true);
   const [scrolled, setScrolled] = useState(false);
@@ -17,6 +17,7 @@ const Navbar = ({logo}) => {
   };
 
   useEffect(() => {
+    setScroll();
     return () => {
       window.removeEventListener("click", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
@@ -31,7 +32,10 @@ const Navbar = ({logo}) => {
   }, [menuOpen]);
 
   const handleScroll = () => {
-    const THRESHOLD = 150;
+    setScroll();
+  };
+
+  const setScroll = () => {
     if (window.pageYOffset > THRESHOLD) {
       setScrolled(true);
     } else {
