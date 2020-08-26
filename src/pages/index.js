@@ -4,7 +4,6 @@ import { About, Contact, Hero, Jobs, Projects, Layout } from "../components";
 
 const Home = ({data}) => {
   const {jobs, about, projects, logo} = data;
-  console.log(data);
   return (
     <Layout logo={logo.nodes}>
       <Hero />
