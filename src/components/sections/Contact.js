@@ -121,7 +121,7 @@ const Contact = () => {
                 onChange={handleMessageChange} >
               </textarea>
             </div>
-            <button className="submit-btn" type="submit">Submit</button>
+            <button className="submit-btn" tabIndex="0" type="submit">Submit</button>
             {error && <h3 className="info-message error">{error}</h3>}
             {success && <h3 className="info-message success">Submitted successfully! I'll reach out to you.</h3>}
           </form>

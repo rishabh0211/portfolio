@@ -104,7 +104,6 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: 0;
     border-radius: 0;
-    outline: none;
   }
 
   input, textarea {

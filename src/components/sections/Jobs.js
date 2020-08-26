@@ -183,7 +183,9 @@ const Jobs = ({ jobs }) => {
                   key={company}
                   className="tab-item"
                   onClick={() => setActiveTab(i)}
+                  onKeyPress={e => e.key === 'Enter' ? setActiveTab(i) : ''}
                   isActive={activeTab === i}
+                  tabIndex="0"
                 >
                   {company}
                 </StyledTabItem>
