@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 import { StyledNavbar, StyledBurgerContainer } from "./styledComponents/StyledNavbar";
 import { throttle } from '../utils';
 
-const Navbar = ({logo}) => {
+const Navbar = ({logo, is404}) => {
   const THRESHOLD = 150;
   const [menuOpen, setMenuOpen] = useState(false);
   const [noAnim, setNoAnim] = useState(true);
@@ -70,18 +70,22 @@ const Navbar = ({logo}) => {
       <div className="logo">
         <Image fluid={logo.fluid} alt="logo" />
       </div>
-      <Links styleClass="desktop-links" />
-      <StyledBurgerContainer
-        className={`burger-container ${menuOpen ? 'active' : ''} ${noAnim ? 'no-anim' : ''}`}
-        onClick={handleBurgerClick}
-      >
-        <div className="line-1" ></div>
-        <div className="line-2" ></div>
-        <div className="line-3" ></div>
-      </StyledBurgerContainer>
-      <aside className={`mobile-links-container ${menuOpen && 'active'}`}>
-        <Links ref={menu} styleClass='mobile-links' handleClick={onNavClick} />
-      </aside>
+      {!is404 && 
+        <>
+          <Links styleClass="desktop-links" />
+          <StyledBurgerContainer
+            className={`burger-container ${menuOpen ? 'active' : ''} ${noAnim ? 'no-anim' : ''}`}
+            onClick={handleBurgerClick}
+          >
+            <div className="line-1" ></div>
+            <div className="line-2" ></div>
+            <div className="line-3" ></div>
+          </StyledBurgerContainer>
+          <aside className={`mobile-links-container ${menuOpen && 'active'}`}>
+            <Links ref={menu} styleClass='mobile-links' handleClick={onNavClick} />
+          </aside>
+        </>
+      }
     </StyledNavbar>
   )
 }

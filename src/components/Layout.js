@@ -10,13 +10,13 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
 
-const Layout = ({ children, logo }) => {
-  const { site } = useStaticQuery(query);
+const Layout = ({ children, is404 }) => {
+  const { site, logo } = useStaticQuery(query);
   return (
     <div>
       <Head metadata={site.siteMetadata} />
       <GlobalStyle />
-      <Navbar logo={logo[0]} />
+      <Navbar logo={logo.nodes[0]} is404={is404}/>
       {children}
       <Footer />
     </div>
@@ -33,6 +33,13 @@ const query = graphql`
         siteUrl
         title
         siteLanguage
+      }
+    }
+    logo: allImageSharp(filter: {fluid: {src: {regex: "/logo/"}}}) {
+      nodes {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

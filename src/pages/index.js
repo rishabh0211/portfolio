@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 import { About, Contact, Hero, Jobs, Projects, Layout } from "../components";
 
 const Home = ({data}) => {
-  const {jobs, about, projects, logo} = data;
+  const {jobs, about, projects} = data;
   return (
-    <Layout logo={logo.nodes}>
+    <Layout>
       <Hero />
       <About about={about.nodes} />
       <Jobs jobs={jobs.nodes} />
@@ -72,13 +72,6 @@ export const query = graphql`
           }
         }
         html
-      }
-    }
-    logo: allImageSharp(filter: {fluid: {src: {regex: "/logo/"}}}) {
-      nodes {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
       }
     }
   }
