@@ -24,14 +24,40 @@ const StyledAbout = styled.section`
       flex-direction: column-reverse;
     `}
   }
-  .image-container {
+  .image-section {
     width: 40%;
+    display: flex;
+    justify-content: center;
+    ${media.thone`
+      width: 100%;
+      margin-top: 2rem;
+    `}
+  }
+  .image-container {
+    width: 80%;
+    
+    ${media.tablet`width: 100%`}
     ${media.thone`
       width: 60%;
       align-self: center;
-    `}
+      `}
+      
+    .gatsby-image-wrapper {
+      outline: 0;
+      outline-offset: 1.6rem;
+      transition: all .3s ease-in-out;
+      border-radius: 1rem;
+      filter: grayscale(1);
+
+      &:hover {
+        filter: grayscale(0);
+        outline: 1rem solid ${colors.orange};
+        transform: scale(.9) translateY(-.5rem);
+      }
+    }
     .image {
       object-fit: contain;
+      border-radius: .4rem;
     }
   }
   .about-desc {
@@ -109,8 +135,10 @@ const About = ({ about }) => {
     <StyledAbout id="about">
       <div className="inner-container">
         <div className="about-section">
-          <div className="image-container">
-            <Image fluid={avatar.childImageSharp.fluid} alt="Avatar" />
+          <div className="image-section">
+            <div className="image-container">
+              <Image fluid={avatar.childImageSharp.fluid} alt="Avatar" />
+            </div>
           </div>
           <div className="about-desc">
             <h3 className="hello-heading">
