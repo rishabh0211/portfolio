@@ -91,7 +91,7 @@ const Hero = () => {
           applications, and everything in between.
         </p>
         <Link to="#contact">
-          <button className="contact-btn">
+          <button className="contact-btn" tabIndex="-1">
             Get in touch
           </button>
         </Link>
@@ -99,7 +99,7 @@ const Hero = () => {
           target="_blank"
           className="resume-link"
           rel="nofollow noopener noreferrer">
-          <button className="contact-btn resume">
+          <button className="contact-btn resume" tabIndex="-1">
             resume
           </button>
         </a>

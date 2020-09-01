@@ -37,6 +37,27 @@ const StyledProjects = styled.section`
     background: ${colors.orange};
     margin-right: 1rem;
   }
+  .projects-info {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+  }
+  .git-link {
+    color: ${colors.orange};
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      transition: width .2s cubic-bezier(0.03, 0.21, 0.79, 1.01);
+      border-bottom: solid .1rem ${colors.orange};
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
   .project-grid {
     margin-top: 8rem;
     display: grid;
@@ -162,6 +183,11 @@ const Projects = ({ projects }) => {
           some of my work
           <div className="hr-line line-after"></div>
         </h3>
+        <p className="projects-info">
+          Apart from offical projects, below are some of my perosnal projects
+          which I work on in my free time. I like to learn things by creating projects. You can find more
+          on my <a className="git-link" target="_blank" href="https://github.com/rishabh0211" rel="nofollow noopener noreferrer">github</a> profile.
+        </p>
         <div>
           {projects && projects.map((project, i) => {
             const { frontmatter: { github, image, tech, title, url }, html } = project;
