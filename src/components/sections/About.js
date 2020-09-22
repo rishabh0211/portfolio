@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Image  from "gatsby-image";
 import { media, mixins, theme } from "../../styles";
 import { FaCodepen } from "react-icons/fa";
+import { hex2rgba } from '../../utils';
 
 const { colors } = theme;
 
@@ -47,12 +48,25 @@ const StyledAbout = styled.section`
       outline-offset: 1.6rem;
       transition: all .3s ease-in-out;
       border-radius: 1rem;
-      filter: grayscale(1);
+      position: relative;
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: ${hex2rgba(colors.lightBlack, 0.4)};
+        transition: background .3s ease-in-out;
+        z-index: 3;
+      }
 
       &:hover {
-        filter: grayscale(0);
         outline: 1rem solid ${colors.orange};
         transform: scale(.9) translateY(-.5rem);
+        &::before {
+          display: none;
+        }
       }
     }
     .image {

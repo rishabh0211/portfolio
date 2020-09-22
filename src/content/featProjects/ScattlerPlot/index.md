@@ -1,7 +1,7 @@
 ---
 title: 'Gapminder Clone'
 github: 'https://github.com/rishabh0211/d3-scatterPlot'
-url: 'https://scatterplotd3.herokuapp.com/'
+url: 'https://gapminder-clone.herokuapp.com/'
 image: './d3-scatterplot.png'
 rank: 3
 tech:
