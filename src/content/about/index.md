@@ -2,8 +2,7 @@
 title: 'About Me'
 avatar: './hero.jpeg'
 skills: 
-  - HTML
-  - (S)CSS
+  - HTML / (S)CSS
   - Javascript (ES6+)
   - React Js
   - Redux
@@ -14,6 +13,10 @@ skills:
   - MongoDB
   - Webpack
   - Docker
+  - styled-components
+  - D3Js
+  - Typescript
+  - Data structures
 ---
 
 Hi! I'm Rishabh, a sofware engineer based in New Delhi, India.
