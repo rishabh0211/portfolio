@@ -17,6 +17,7 @@ skills:
   - D3Js
   - Typescript
   - Data structures
+  - Jest
 ---
 
 Hi! I'm Rishabh, a sofware engineer based in New Delhi, India.
