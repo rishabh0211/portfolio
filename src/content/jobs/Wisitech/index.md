@@ -2,7 +2,7 @@
 title: 'Senior Frontend Developer'
 company: 'Wisitech'
 location: 'New Delhi, India'
-range: 'August 2018 - Jan 2019'
+range: 'Aug 2018 - Jan 2019'
 url: 'https://www.wisitech.com/'
 date: 2018-08-01
 ---
