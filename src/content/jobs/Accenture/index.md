@@ -1,8 +1,8 @@
 ---
-title: 'Application Development Analyst'
+title: 'Software Engineer'
 company: 'Accenture'
 location: 'Gurgaon, India'
-range: 'Jan 2017 - July 2018'
+range: 'Jan 2017 - August 2018'
 url: 'https://www.accenture.com/in-en'
 date: 2017-01-24
 ---
