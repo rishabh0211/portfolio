@@ -54,7 +54,7 @@ export const query = graphql`
       }
     }
     projects: allMarkdownRemark(
-      filter: {fileAbsolutePath: {regex: "/featProjects/"}},
+      filter: {fileAbsolutePath: {regex: "/featProjects/"}, frontmatter: {exclude: {ne: true}}},
       sort: {fields: frontmatter___rank, order: ASC}
     ) {
       nodes {
