@@ -14,8 +14,7 @@ const Projects = ({ projects }) => {
           <div className="hr-line line-after"></div>
         </h3>
         <p className="projects-info">
-          Apart from offical projects, below are some of my perosnal projects
-          which I work on in my free time. I like to learn things by creating projects. You can find more
+          Following are some of the projects I've been part of or have made entirely from scratch. You can find more
           on my <a className="git-link" target="_blank" href="https://github.com/rishabh0211" rel="nofollow noopener noreferrer">github</a> profile.
         </p>
         <div>
@@ -26,9 +25,11 @@ const Projects = ({ projects }) => {
                 <div className="project-description">
                   <div className="header">
                     <h2 className="project-title">{title}</h2>
-                    <a target="_blank" rel="nofollow noopener noreferrer" href={github} >
-                      <GoMarkGithub className="icon github-icon" />
-                    </a>
+                    {github && 
+                      <a target="_blank" rel="nofollow noopener noreferrer" href={github} >
+                        <GoMarkGithub className="icon github-icon" />
+                      </a>
+                    }
                     <a target="_blank" rel="nofollow noopener noreferrer" href={url} >
                       <GoLinkExternal className="icon external-icon" />
                     </a>
