@@ -3,7 +3,7 @@ title: 'Git Profile Viewer'
 github: 'https://github.com/rishabh0211/git-dashboard'
 url: 'http://gitprofileviewer.vercel.app/'
 image: './gitprofile.png'
-rank: 2
+rank: 4
 tech:
   - Next.js
   - Github API

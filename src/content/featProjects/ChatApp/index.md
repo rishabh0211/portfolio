@@ -3,7 +3,7 @@ title: 'Chat App'
 github: 'https://github.com/rishabh0211/chat-app'
 url: 'https://chatternet.herokuapp.com/'
 image: './chat-app.png'
-rank: 1
+rank: 5
 tech:
   - React.js
   - Node.js
