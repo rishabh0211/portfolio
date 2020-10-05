@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "Rishabh Rastogi | Portfolio",
-    description: "Portfolio website of Rishabh Rastogi. Specialized in web development.",
+    description: "Rishabh Rastogi | Software developer making things for the web",
     siteUrl: "https://rishabhrastogi.netlify.app",
     siteLanguage: 'en_US',
   },
