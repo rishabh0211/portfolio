@@ -4,7 +4,6 @@ github: 'https://github.com/rishabh0211/Foodville'
 url: 'https://foodvillestore.herokuapp.com/'
 image: './foodville.png'
 rank: 4
-exclude: true
 tech:
   - Reactjs
   - Redux
